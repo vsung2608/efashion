@@ -87,7 +87,7 @@ class EFashionApplicationTests {
                 JiraIssueCreator.automationCreateIssue(platform, browser, version, "Failed", "does not", summary);
                 ((RemoteWebDriver) driver).executeScript("sauce:job-result=" + "failed");
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             JiraIssueCreator.automationCreateIssue(platform, browser, version, "Failed", "does not", summary);
             ((RemoteWebDriver) driver).executeScript("sauce:job-result=" + "failed");
         } finally {

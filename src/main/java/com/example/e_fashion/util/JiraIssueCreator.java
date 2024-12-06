@@ -16,7 +16,7 @@ public class JiraIssueCreator {
     private static final String JIRA_URL = "https://e-fashion.atlassian.net";
     private static final String API_ENDPOINT = "/rest/api/3/issue";
     private static final String USERNAME = "vsung2608@gmail.com";
-    private static final String API_TOKEN = "ATATT3xFfGF0d5ZApArzJqIzdRoBbYbOWpgkI4Fcm9v0BKEerzoTAHhvZ82iRqOfQP-lAybATC68owQUY32E4ppEqi5ZzGAEERvCK9-mgpAP0ZVq3ddLDQZWM3XCZKaG47tXzxqO-etdHw55FXiJUxPCaMldyGSvBzCr9AS50cqNGt_Op3NvpQA=ABA4CCBD";
+    private static final String API_TOKEN = "your api token"; // Do tinh nang bao mat cua git nen khong duoc chua dong nay:))
 
     public static void automationCreateIssue(String operatingSystem, String browser, String version, String status, String result, String summary){
         try {
