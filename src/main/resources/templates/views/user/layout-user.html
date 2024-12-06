@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Trang web bán quần áo số 1 Việt Nam</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+<!--    <link href="assets/img/favicon.png" rel="icon" />-->
+    <link th:href="@{/user/img/apple-touch-icon.png}" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap"
+            rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link th:href="@{/general/vendor/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/user/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet" />
+    <link th:href="@{/user/vendor/aos/aos.css}" rel="stylesheet" />
+    <link th:href="@{/user/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet" />
+    <link th:href="@{/user/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link th:href="@{/user/css/main.css}" rel="stylesheet" />
+    <link th:href="@{/general/css/mdb.min.css}" rel="stylesheet" />
+</head>
+<body class="index-page">
+
+<header th:replace="views/user/fragments/header::header"></header>
+<main layout:fragment="content"></main>
+<footer th:replace="views/user/fragments/footer::footer"></footer>
+
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<!-- Các Tệp JS Vendor -->
+<script th:src="@{/user/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/user/vendor/aos/aos.js}"></script>
+<script th:src="@{/user/vendor/swiper/swiper-bundle.min.js}"></script>
+<script th:src="@{/user/vendor/glightbox/js/glightbox.min.js}"></script>
+
+<!-- Tệp JS Chính -->
+<script th:src="@{/user/js/main.js}"></script>
+<script th:src="@{/general/js/mdb.umd.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{views/admin/layout-admin.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/general/css/mdb.min.css}">
+    <link rel="stylesheet" th:href="@{/admin/css/table.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.14.5/sweetalert2.css"
+          integrity="sha512-6qScZESleBziOBqJwOPurSy6lhLqHGjHNALOOFX0mzRVPiE5SZQvepRzeSO1OB475fcZywuMjxtkrFaO93aq9g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+<main id="main" class="main" layout:fragment="content">
+    <div class="pagetitle">
+        <h1>Chỉnh sửa dữ liệu</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="">Trang chủ</a></li>
+                <li class="breadcrumb-item">Quản lý dữ liệu</li>
+                <li class="breadcrumb-item active">Hãng cung cấp</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="" id="form-submit" method="get">
+                            <div class="content-2-1 d-flex justify-content-between align-items-center mt-2">
+                                <div class="title">
+                                    Tên: Danh sách các hãng cung cấp sản phẩm
+                                </div>
+                                <div class="icon">
+                                    <button type="button" id="addBtn">Thêm bản ghi<i
+                                            class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="desc">Giao diện hỗ trợ các tính năng như tìm kiếm, sắp xếp, phân trang, và các
+                                nút hành động như Chỉnh sửa, Xoá. Người quản trị có thể nhanh chóng quản lý dữ liệu sản
+                                phẩm với các thao tác trực quan, đồng thời lọc và xuất dữ liệu khi cần thiết.
+                            </div>
+                            <div class="content-2-2 d-flex justify-content-between">
+                                <div class="show d-flex align-items-center">
+                                    Show
+                                    <select name="limit" id="selectOp">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                    </select>
+                                    entries
+                                </div>
+                                <div class="search-child">
+                                    Search:
+                                    <input type="search" name="keyword" id="search">
+                                </div>
+                            </div>
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th>Ảnh</th>
+                                    <th>Tên hãng</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Website</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thiết lập</th>
+                                </tr>
+                                <tr th:each="item: ${brands}" th:id="'brand_' + ${item.brandId}"
+                                    th:data-id="${item.brandId}">
+                                    <td><input type="radio"></td>
+                                    <td>
+                                        <div class="image-brand"><img th:src="@{'/uploads/'+${item.logoUrl}}" alt="anh"></div>
+                                    </td>
+                                    <td th:text="${item.name}"></td>
+                                    <td th:text="${item.email}"></td>
+                                    <td th:text="${item.phone}"></td>
+                                    <td th:text="${item.address}"></td>
+                                    <td th:text="${item.website}"></td>
+                                    <td th:text="${item.status}"></td>
+                                    <td>
+                                        <ul class="action-list">
+                                            <li>
+                                                <button type="button" class="editBtn btn btn-primary"><i
+                                                        class="fa fa-pencil-alt"></i></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="deleteBtn btn btn-danger"><i
+                                                        class="fa fa-times"></i></button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <div class="paging">
+                            <ul id="pagination-demo" class="pagination-sm"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="overlay"></div>
+
+    <div id="myForm">
+        <div class="title">
+            <h3>Nhập thông tin sản phẩm</h3>
+            <button class="close-btn" id="closeFormBtn">X</button> <!-- Nút đóng -->
+        </div>
+
+        <form id="form-product">
+            <input type="hidden" name="productId">
+            <div class="row">
+                <div class="col-xl-8">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="name" name="name"
+                                       class="form-control form-control-lg"/>
+                                <label class="form-label" for="name">Tên hãng</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="phone" name="phone" class="form-control form-control-lg"/>
+                                <label class="form-label" for="phone">Số điện thoại</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="email" name="email"
+                                       class="form-control form-control-lg"/>
+                                <label class="form-label" for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="address" name="address" class="form-control form-control-lg"/>
+                                <label class="form-label" for="address">Địa chỉ</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="website" name="website" class="form-control form-control-lg"/>
+                                <label class="form-label" for="website">Website</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <select id="categorySelect" name="status">
+                                <option value="Đang hợp tác">Đang hợp tác</option>
+                                <option value="Đang hợp tác">Tạm dừng</option>
+                                <option value="Đang hợp tác">Chấm dứt</option>
+                            </select>
+                        </div>
+                        <div>
+                            <div data-mdb-input-init class="form-outline">
+                                <textarea id="description" class="form-control" rows="3"
+                                          placeholder="Message sent to the employer"></textarea>
+                                <label class="form-label" for="description">Mô tả</label>
+                            </div>
+                        </div>
+                        <div class="btn-form">
+                            <button type="button" id="confirmBtn">Xác nhận</button>
+                            <button type="button" id="uploadBtn">Đẩy ảnh</button>
+                            <button type="button" id="cancelBtn">Hủy bỏ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="image-brand">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.14.5/sweetalert2.min.js"
+            integrity="sha512-JCDnPKShC1tVU4pNu5mhCEt6KWmHf0XPojB0OILRMkr89Eq9BHeBP+54oUlsmj8R5oWqmJstG1QoY6HkkKeUAg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script th:src="@{/general/js/mdb.umd.min.js}"></script>
+    <script th:src="@{/admin/js/manage-brand.js}"></script>
+</main>
+
+</body>
+</html>

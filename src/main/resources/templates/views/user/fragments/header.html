@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<header id="header" class="header d-flex align-items-center position-relative" th:fragment="header">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+        <a th:href="@{/general/home-page}" class="logo d-flex align-items-center">
+            <img th:src="@{/general/img/logo.png}" alt="Efsahion">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a th:href="@{/general/home-page}">Trang Chủ</a></li>
+                <li><a th:href="@{/general/introduction}" class="active">Giới Thiệu</a></li>
+                <li><a th:href="products.html">Sản Phẩm</a></li>
+                <li><a th:href="@{/general/blogs}">Tin Tức</a></li>
+                <li><a th:href="@{/general/contact}">Liên Hệ</a></li>
+                <li th:if="${authenticated}">
+                    <a href="cart.html"><i class="bi bi-cart4" style="font-size: 18px"></i></a>
+                </li>
+                <li th:if="${authenticated}"><a th:href="@{/general/login}">Cập Nhật</a></li>
+                <li th:if="${authenticated}"><a th:href="@{/auth/logout}">Đăng Xuất</a></li>
+
+                <li th:if="${!authenticated}" id="loginBtn"><a th:href="@{/general/login}">Đăng Nhập</a></li>
+                <li th:if="${!authenticated}" id="registerBtn"><a th:href="@{/general/register}">Đăng Ký</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+    </div>
+</header>
+</body>
+</html>

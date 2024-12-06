@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{views/user/layout-user.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main class="main" layout:fragment="content">
+    <!-- Tiêu Đề Trang -->
+    <div
+            class="page-title dark-background"
+            data-aos="fade"
+    >
+        <div class="container position-relative">
+            <h1>Chi Tiết Bài Viết</h1>
+            <p>
+                Bài viết chia sẻ các mẹo hay và thông tin hữu ích về thời trang và
+                phong cách sống.
+            </p>
+            <nav class="breadcrumbs">
+                <ol>
+                    <li><a href="index-test.html">Trang Chủ</a></li>
+                    <li class="current">Chi Tiết Bài Viết</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Kết Thúc Tiêu Đề Trang -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Phần Chi Tiết Bài Viết -->
+                <section id="blog-details" class="blog-details section">
+                    <div class="container">
+                        <article class="article">
+                            <div class="post-img">
+                                <img
+                                        src="assets/img/blog/blog-1.jpg"
+                                        alt="Hình ảnh bài viết"
+                                        class="img-fluid"
+                                />
+                            </div>
+
+                            <h2 class="title">
+                                Khám phá phong cách thời trang đẳng cấp cho mọi dịp
+                            </h2>
+
+                            <div class="meta-top">
+                                <ul>
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-person"></i>
+                                        <a href="blog-details.html">John Doe</a>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-clock"></i>
+                                        <a href="blog-details.html"
+                                        ><time datetime="2020-01-01"
+                                        >Ngày 1 Tháng 1, 2022</time
+                                        ></a
+                                        >
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-chat-dots"></i>
+                                        <a href="blog-details.html">12 Bình Luận</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Kết Thúc meta top -->
+
+                            <div class="content">
+                                <p>
+                                    Thời trang không chỉ là quần áo, mà còn là cách bạn thể
+                                    hiện bản thân. Trong bài viết này, chúng tôi sẽ chia sẻ
+                                    các mẹo hữu ích để bạn luôn nổi bật.
+                                </p>
+
+                                <blockquote>
+                                    <p>
+                                        "Thời trang là ngôn ngữ không lời mạnh mẽ nhất bạn có
+                                        thể sử dụng mỗi ngày."
+                                    </p>
+                                </blockquote>
+
+                                <p>
+                                    Bạn có thể áp dụng những mẹo nhỏ sau để nâng tầm phong
+                                    cách: phối đồ theo tông màu phù hợp, sử dụng phụ kiện tạo
+                                    điểm nhấn, và lựa chọn chất liệu thoải mái.
+                                </p>
+
+                                <h3>Lựa chọn trang phục theo xu hướng.</h3>
+                                <p>
+                                    Cập nhật các xu hướng mới nhất để không bao giờ lỗi mốt.
+                                    Các bộ sưu tập hiện nay tập trung vào sự tối giản nhưng
+                                    vẫn giữ được vẻ thanh lịch và sang trọng.
+                                </p>
+                                <img
+                                        src="assets/img/blog/blog-inside-post.jpg"
+                                        class="img-fluid"
+                                        alt="Hình ảnh chi tiết bài viết"
+                                />
+
+                                <h3>Phụ kiện là điểm nhấn quan trọng.</h3>
+                                <p>
+                                    Đừng quên vai trò của phụ kiện như giày, túi xách, và
+                                    trang sức. Chúng không chỉ giúp bạn nổi bật mà còn hoàn
+                                    thiện bộ trang phục của bạn.
+                                </p>
+                            </div>
+                            <!-- Kết Thúc nội dung bài viết -->
+
+                            <div class="meta-bottom">
+                                <i class="bi bi-folder"></i>
+                                <ul class="cats">
+                                    <li><a href="#">Kinh Doanh</a></li>
+                                </ul>
+
+                                <i class="bi bi-tags"></i>
+                                <ul class="tags">
+                                    <li><a href="#">Sáng Tạo</a></li>
+                                    <li><a href="#">Mẹo Hay</a></li>
+                                    <li><a href="#">Thời Trang</a></li>
+                                </ul>
+                            </div>
+                            <!-- Kết Thúc meta bottom -->
+                        </article>
+                    </div>
+                </section>
+                <!-- Kết Thúc Phần Chi Tiết Bài Viết -->
+
+                <!-- Phần Bình Luận Bài Viết -->
+                <section id="blog-comments" class="blog-comments section">
+                    <div class="container">
+                        <h4 class="comments-count">8 Bình Luận</h4>
+
+                        <div id="comment-1" class="comment">
+                            <div class="d-flex">
+                                <div class="comment-img">
+                                    <img
+                                            src="assets/img/blog/comments-1.jpg"
+                                            alt="Hình ảnh bình luận"
+                                    />
+                                </div>
+                                <div>
+                                    <h5>
+                                        <a href="">Georgia Reader</a>
+                                        <a href="#" class="reply"
+                                        ><i class="bi bi-reply-fill"></i> Trả lời</a
+                                        >
+                                    </h5>
+                                    <time datetime="2020-01-01">Ngày 1 Tháng 1, 2022</time>
+                                    <p>
+                                        Et rerum totam nisi. Molestiae vel quam dolorum vel
+                                        voluptatem et et. Est ad aut sapiente quis molestiae est
+                                        qui cum soluta. Vero aut rerum vel. Rerum quos
+                                        laboriosam placeat ex qui. Sint qui facilis et.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Kết Thúc bình luận #1 -->
+
+                        <div id="comment-2" class="comment">
+                            <div class="d-flex">
+                                <div class="comment-img">
+                                    <img
+                                            src="assets/img/blog/comments-2.jpg"
+                                            alt="Hình ảnh bình luận"
+                                    />
+                                </div>
+                                <div>
+                                    <h5>
+                                        <a href="">Aron Alvarado</a>
+                                        <a href="#" class="reply"
+                                        ><i class="bi bi-reply-fill"></i> Trả lời</a
+                                        >
+                                    </h5>
+                                    <time datetime="2020-01-01">Ngày 1 Tháng 1, 2022</time>
+                                    <p>
+                                        Ipsam tempora sequi voluptatem quis sapiente non. Autem
+                                        itaque eveniet saepe. Officiis illo ut beatae.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div id="comment-reply-1" class="comment comment-reply">
+                                <div class="d-flex">
+                                    <div class="comment-img">
+                                        <img
+                                                src="assets/img/blog/comments-3.jpg"
+                                                alt="Hình ảnh trả lời bình luận"
+                                        />
+                                    </div>
+                                    <div>
+                                        <h5>
+                                            <a href="">Lynda Small</a>
+                                            <a href="#" class="reply"
+                                            ><i class="bi bi-reply-fill"></i> Trả lời</a
+                                            >
+                                        </h5>
+                                        <time datetime="2020-01-01">Ngày 1 Tháng 1, 2022</time>
+                                        <p>
+                                            Enim ipsa eum fugiat fuga repellat. Commodi quo quo
+                                            dicta. Est ullam aspernatur ut vitae quia mollitia id
+                                            non. Qui ad quas nostrum rerum sed necessitatibus aut
+                                            est. Eum officiis sed repellat maxime vero nisi natus.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div id="comment-reply-2" class="comment comment-reply">
+                                    <div class="d-flex">
+                                        <div class="comment-img">
+                                            <img
+                                                    src="assets/img/blog/comments-4.jpg"
+                                                    alt="Hình ảnh trả lời bình luận"
+                                            />
+                                        </div>
+                                        <div>
+                                            <h5>
+                                                <a href="">Sianna Ramsay</a>
+                                                <a href="#" class="reply"
+                                                ><i class="bi bi-reply-fill"></i> Trả lời</a
+                                                >
+                                            </h5>
+                                            <time datetime="2020-01-01"
+                                            >Ngày 1 Tháng 1, 2022</time
+                                            >
+                                            <p>
+                                                Et dignissimos impedit nulla et quo distinctio ex
+                                                nemo. Omnis quia dolores cupiditate et. Ut unde qui
+                                                eligendi sapiente omnis ullam. Placeat porro est
+                                                commodi est officiis voluptas repellat quisquam
+                                                possimus.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Kết Thúc trả lời bình luận #2-->
+                            </div>
+                            <!-- Kết Thúc trả lời bình luận #1-->
+                        </div>
+
+                        <div id="comment-3" class="comment">
+                            <div class="d-flex">
+                                <div class="comment-img">
+                                    <img
+                                            src="assets/img/blog/comments-5.jpg"
+                                            alt="Hình ảnh bình luận"
+                                    />
+                                </div>
+                                <div>
+                                    <h5>
+                                        <a href="">Nolan Davidson</a>
+                                        <a href="#" class="reply"
+                                        ><i class="bi bi-reply-fill"></i> Trả lời</a
+                                        >
+                                    </h5>
+                                    <time datetime="2020-01-01">Ngày 1 Tháng 1, 2022</time>
+                                    <p>
+                                        Distinctio nesciunt rerum reprehenderit sed. Iste omnis
+                                        eius repellendus quia nihil ut accusantium tempore.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Kết Thúc bình luận #3 -->
+
+                        <div id="comment-4" class="comment">
+                            <div class="d-flex">
+                                <div class="comment-img">
+                                    <img
+                                            src="assets/img/blog/comments-6.jpg"
+                                            alt="Hình ảnh bình luận"
+                                    />
+                                </div>
+                                <div>
+                                    <h5>
+                                        <a href="">Kay Duggan</a>
+                                        <a href="#" class="reply"
+                                        ><i class="bi bi-reply-fill"></i> Trả lời</a
+                                        >
+                                    </h5>
+                                    <time datetime="2020-01-01">Ngày 1 Tháng 1, 2022</time>
+                                    <p>
+                                        Dolorem atque aut. Omnis doloremque blanditiis quia eum
+                                        porro quis ut velit tempore. Cumque sed quia ut maxime.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Kết Thúc bình luận #4 -->
+                    </div>
+                </section>
+                <!-- Kết Thúc Phần Bình Luận Bài Viết -->
+
+                <!-- Comment Form Section -->
+                <section id="comment-form" class="comment-form section">
+                    <div class="container">
+                        <form action="">
+                            <h4>Đăng Bình Luận</h4>
+                            <p>
+                                Địa chỉ email của bạn sẽ không được công bố. Các trường bắt
+                                buộc được đánh dấu *
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input
+                                            name="name"
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Tên Của Bạn*"
+                                    />
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <input
+                                            name="email"
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Email Của Bạn*"
+                                    />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col form-group">
+                                    <input
+                                            name="website"
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Website Của Bạn"
+                                    />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col form-group">
+                      <textarea
+                              name="comment"
+                              class="form-control"
+                              placeholder="Bình Luận Của Bạn*"
+                      ></textarea>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">
+                                    Đăng Bình Luận
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <!-- /Comment Form Section -->
+            </div>
+
+            <div class="col-lg-4 sidebar">
+                <div class="widgets-container">
+                    <!-- Widget Tác Giả Blog -->
+                    <div class="blog-author-widget widget-item">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="d-flex align-items-center w-100">
+                                <img
+                                        src="assets/img/blog/blog-author.jpg"
+                                        class="rounded-circle flex-shrink-0"
+                                        alt="Ảnh tác giả"
+                                />
+                                <div>
+                                    <h4>Jane Smith</h4>
+                                    <div class="social-links">
+                                        <a href="https://x.com/#"><i class="bi bi-twitter-x"></i></a>
+                                        <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
+                                        <a href="https://instagram.com/#"><i class="bi bi-instagram"></i></a>
+                                        <a href="https://linkedin.com/#"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>
+                                Jane Smith là một tác giả yêu thích chia sẻ các mẹo thời trang và phong cách sống. Với sự sáng tạo, cô ấy mang đến những bài viết chất lượng giúp bạn tự tin hơn mỗi ngày.
+                            </p>
+                        </div>
+                    </div>
+                    <!--/Widget Tác Giả Blog -->
+
+                    <!-- Widget Tìm Kiếm -->
+                    <div class="search-widget widget-item">
+                        <h3 class="widget-title">Tìm Kiếm</h3>
+                        <form action="">
+                            <input type="text" placeholder="Nhập từ khóa tìm kiếm..." />
+                            <button type="submit" title="Tìm Kiếm">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <!--/Widget Tìm Kiếm -->
+
+                    <!-- Widget Danh Mục -->
+                    <div class="categories-widget widget-item">
+                        <h3 class="widget-title">Danh Mục</h3>
+                        <ul class="mt-3">
+                            <li><a href="#">Chung <span>(25)</span></a></li>
+                            <li><a href="#">Phong Cách Sống <span>(12)</span></a></li>
+                            <li><a href="#">Du Lịch <span>(5)</span></a></li>
+                            <li><a href="#">Thiết Kế <span>(22)</span></a></li>
+                            <li><a href="#">Sáng Tạo <span>(8)</span></a></li>
+                            <li><a href="#">Giáo Dục <span>(14)</span></a></li>
+                        </ul>
+                    </div>
+                    <!--/Widget Danh Mục -->
+
+                    <!-- Widget Bài Viết Mới -->
+                    <div class="recent-posts-widget-2 widget-item">
+                        <h3 class="widget-title">Bài Viết Mới</h3>
+
+                        <div class="post-item">
+                            <h4><a href="blog-details.html">Không có gì ngoài niềm vui</a></h4>
+                            <time datetime="2020-01-01">Ngày 1 Tháng 1, 2020</time>
+                        </div>
+                        <!-- Kết Thúc bài viết mới #1 -->
+
+                        <div class="post-item">
+                            <h4><a href="blog-details.html">Cách chọn trang phục phù hợp</a></h4>
+                            <time datetime="2020-01-01">Ngày 1 Tháng 1, 2020</time>
+                        </div>
+                        <!-- Kết Thúc bài viết mới #2 -->
+
+                        <div class="post-item">
+                            <h4>
+                                <a href="blog-details.html">Phong cách sáng tạo trong phối đồ</a>
+                            </h4>
+                            <time datetime="2020-01-01">Ngày 1 Tháng 1, 2020</time>
+                        </div>
+                        <!-- Kết Thúc bài viết mới #3 -->
+
+                        <div class="post-item">
+                            <h4><a href="blog-details.html">Xu hướng thời trang năm 2023</a></h4>
+                            <time datetime="2020-01-01">Ngày 1 Tháng 1, 2020</time>
+                        </div>
+                        <!-- Kết Thúc bài viết mới #4 -->
+
+                        <div class="post-item">
+                            <h4><a href="blog-details.html">Cách làm nổi bật cá tính qua trang phục</a></h4>
+                            <time datetime="2020-01-01">Ngày 1 Tháng 1, 2020</time>
+                        </div>
+                        <!-- Kết Thúc bài viết mới #5 -->
+                    </div>
+                    <!--/Widget Bài Viết Mới -->
+
+                    <!-- Widget Thẻ Tag -->
+                    <div class="tags-widget widget-item">
+                        <h3 class="widget-title">Thẻ Tag</h3>
+                        <ul>
+                            <li><a href="#">Ứng Dụng</a></li>
+                            <li><a href="#">Công Nghệ</a></li>
+                            <li><a href="#">Kinh Doanh</a></li>
+                            <li><a href="#">Mac</a></li>
+                            <li><a href="#">Thiết Kế</a></li>
+                            <li><a href="#">Văn Phòng</a></li>
+                            <li><a href="#">Sáng Tạo</a></li>
+                            <li><a href="#">Studio</a></li>
+                            <li><a href="#">Thông Minh</a></li>
+                            <li><a href="#">Mẹo</a></li>
+                            <li><a href="#">Marketing</a></li>
+                        </ul>
+                    </div>
+                    <!--/Widget Thẻ Tag -->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

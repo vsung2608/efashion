@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" th:href="@{/general/css/mdb.min.css}"/>
+    <link rel="stylesheet" th:href="@{/general/css/toast.css}"/>
+    <link rel="stylesheet" th:href="@{/general/css/register.css}"/>
+    <title>Đăng ký</title>
+</head>
+
+<body>
+<section class="vh-100 bg-image"
+         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Tạo tài khoản</h2>
+
+                            <form id="form-register">
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div data-mdb-input-init class="form-outline">
+                                            <input type="text" id="firstName" name="firstName" class="form-control form-control-lg" />
+                                            <label class="form-label" for="lastName">Họ</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div data-mdb-input-init class="form-outline">
+                                            <input type="text" id="lastName" name="lastName" class="form-control form-control-lg" />
+                                            <label class="form-label" for="lastName">Tên</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="email" id="email" name="email" class="form-control form-control-lg" />
+                                    <label class="form-label" for="email">Email</label>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="password" id="password" name="password"
+                                           class="form-control form-control-lg" />
+                                    <label class="form-label" for="password">Mật khẩu</label>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="password" id="re-password"
+                                           class="form-control form-control-lg" />
+                                    <label class="form-label" for="re-password">Nhập lại mật khẩu</label>
+                                </div>
+
+                                <div class="form-check d-flex justify-content-center mb-5">
+                                    <input class="form-check-input me-2" type="checkbox" value=""
+                                           id="form2Example3cg" />
+                                    <label class="form-check-label" for="form2Example3cg">
+                                        Tôi đồng ý với tất cả <a href="#!" class="text-body"><u>Điều khoản của dịch vụ</u></a>
+                                    </label>
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" id="registerBtn">Đăng ký</button>
+                                </div>
+
+                                <p class="text-center text-muted mt-5 mb-0">Bạn đã có tài khoản? <a th:href="@{/general/login}"
+                                                                                                    class="fw-bold text-body"><u>Đăng nhập tại đây</u></a></p>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- MDB -->
+<script type="text/javascript" th:src="@{/general/js/mdb.umd.min.js}"></script>
+<!-- Custom scripts -->
+<script type="text/javascript"></script>
+<script th:src="@{js/toast.js}"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(function () {
+        $('#registerBtn').click(function (e) {
+            // e.preventDefault();
+            var data = {}
+            var formData = $('#form-register').serializeArray()
+            formData.forEach(item => data[item.name] = item.value)
+            console.log(JSON.stringify(data));
+            $.ajax({
+                url: '/efashion/auth/register',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                success: function () {
+                    showToast("Đăng ký thành công", "success", 3000)
+                    window.location.href = '/efashion/general/confirmation'
+                },
+                error: function (error) {
+                    if (error.responseJSON && error.responseJSON.message) {
+                        showToast(error.responseJSON.message, "error", 3000);
+                    } else {
+                        showToast("Đăng ký thất bại, vui lòng thử lại!", "error", 3000);
+                    }
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+body {
+    font-family: "Karla", sans-serif;
+    background-color: #d0d0ce;
+    min-height: 100vh;
+}
+
+.brand-wrapper {
+    margin-bottom: 19px;
+}
+
+.brand-wrapper .logo {
+    height: 60px;
+}
+
+.login-card {
+    border: 0;
+    border-radius: 27.5px;
+    box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+    overflow: hidden;
+}
+
+.login-card-img {
+    border-radius: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.login-card .card-body {
+    padding: 85px 60px 60px;
+}
+
+@media (max-width: 422px) {
+    .login-card .card-body {
+        padding: 35px 24px;
+    }
+}
+
+.login-card-description {
+    font-size: 25px;
+    color: #000;
+    font-weight: normal;
+    margin-bottom: 23px;
+}
+
+.login-card form {
+    max-width: 326px;
+}
+
+
+.login-card .login-btn {
+    padding: 13px 20px 12px;
+    background-color: #000;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+.login-card .login-btn:hover {
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #000;
+}
+
+.login-card .forgot-password-link {
+    font-size: 14px;
+    color: #919aa3;
+    margin-bottom: 12px;
+}
+
+.login-card-footer-text {
+    font-size: 16px;
+    color: #0d2366;
+    margin-bottom: 24x;
+}
+
+@media (max-width: 767px) {
+    .login-card-footer-text {
+        margin-bottom: 10px;
+    }
+}
+
+.link{
+    text-align: center;
+}
+
+.link .nav-link{
+    display: flex;
+    justify-content: center;
+}
+
+.link span{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.link .nav-link .icon:nth-child(1){
+    background-color: blue;
+}
+
+.link .nav-link .icon:nth-child(2){
+    background-color: red;
+}
+
+.link .nav-link .icon:nth-child(3){
+    background-color: rgb(255, 0, 157);
+}
+
+.login-card-footer-nav a {
+    font-size: 14px;
+    color: #919aa3;
+}
+
+.diff{
+    text-align: center;
+}
+
+.input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input input {
+    width: 100%;
+    padding: 8px 40px 8px 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Biểu tượng cơ bản */
+.input i {
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+    color: #ccc;
+    pointer-events: none;
+}
+
+#icon1 {
+    display: block;
+}
+
+#icon2 {
+    display: none;
+    color: #4caf50;
+}
+
+.input input:valid {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.input input:valid + #icon1 {
+    display: none;
+}
+
+.input input:valid ~ #icon2 {
+    display: block;
+}
+
+input:-webkit-autofill {
+    background-color: #fff !important;
+    color: #333 !important;
+    box-shadow: 0 0 0px 1000px #fff inset !important;
+}
+
+input:-webkit-autofill:focus {
+    background-color: #fff !important;
+    color: #333 !important;
+}

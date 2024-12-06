@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{views/user/layout-user.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main class="main" layout:fragment="content">
+    <!-- Tiêu Đề Trang -->
+    <div
+            class="page-title dark-background"
+            data-aos="fade"
+    >
+        <div class="container position-relative">
+            <nav class="breadcrumbs">
+                <ol>
+                    <li><a th:href="@{/general/home-page}">Trang Chủ</a></li>
+                    <li class="current">Liên Hệ</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Kết Thúc Tiêu Đề Trang -->
+
+    <!-- Phần Liên Hệ -->
+    <section id="contact" class="contact section">
+        <div class="mb-5">
+            <iframe
+                    style="width: 100%; height: 400px"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.858271150033!2d105.73805201540288!3d21.05050149236202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313455ae1c4f5e4b%3A0x3b290b0f3f5d2cc5!2zR2nDoW0gSMOyYSBOb8OjaSwgVGhlIFTDom4gVGjhu4csIE1pbmggxbzhuq1uIE11IGksIEjDoCBB4bqnbiwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1698242904874"
+                    frameborder="0"
+                    allowfullscreen=""
+            ></iframe>
+        </div>
+
+        <!-- Kết Thúc Bản Đồ Google -->
+
+        <div class="container" data-aos="fade">
+            <div class="row gy-5 gx-lg-5">
+                <div class="col-lg-4">
+                    <div class="info">
+                        <h3>Liên Hệ Với Chúng Tôi</h3>
+                        <p>
+                            Hãy liên lạc ngay với chúng tôi nếu bạn cần tư vấn hoặc hỗ trợ
+                            thêm về sản phẩm và dịch vụ.
+                        </p>
+
+                        <div class="info-item d-flex">
+                            <i class="bi bi-geo-alt flex-shrink-0"></i>
+                            <div>
+                                <h4>Địa Chỉ:</h4>
+                                <p>108 Đường Adam, Hà Nội, Việt Nam</p>
+                            </div>
+                        </div>
+                        <!-- Kết Thúc Thông Tin Địa Chỉ -->
+
+                        <div class="info-item d-flex">
+                            <i class="bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h4>Email:</h4>
+                                <p>hotro@thoitrangviet.com</p>
+                            </div>
+                        </div>
+                        <!-- Kết Thúc Thông Tin Email -->
+
+                        <div class="info-item d-flex">
+                            <i class="bi bi-phone flex-shrink-0"></i>
+                            <div>
+                                <h4>Gọi Ngay:</h4>
+                                <p>+84 123 456 789</p>
+                            </div>
+                        </div>
+                        <!-- Kết Thúc Thông Tin Gọi Điện -->
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input
+                                        type="text"
+                                        name="name"
+                                        class="form-control"
+                                        id="name"
+                                        placeholder="Tên Của Bạn"
+                                        required=""
+                                />
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input
+                                        type="email"
+                                        class="form-control"
+                                        name="email"
+                                        id="email"
+                                        placeholder="Email Của Bạn"
+                                        required=""
+                                />
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    name="subject"
+                                    id="subject"
+                                    placeholder="Chủ Đề"
+                                    required=""
+                            />
+                        </div>
+                        <div class="form-group mt-3">
+                  <textarea
+                          class="form-control"
+                          name="message"
+                          placeholder="Nội Dung Tin Nhắn"
+                          required=""
+                  ></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Đang gửi...</div>
+                            <div class="error-message">
+                                Có lỗi xảy ra. Vui lòng thử lại!
+                            </div>
+                            <div class="sent-message">
+                                Tin nhắn của bạn đã được gửi. Cảm ơn bạn!
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit">Gửi Tin Nhắn</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Kết Thúc Biểu Mẫu Liên Hệ -->
+            </div>
+        </div>
+    </section>
+    <!-- /Contact Section -->
+
+    <!-- Phần Kêu Gọi Hành Động -->
+    <section
+            id="call-to-action"
+            class="call-to-action section light-background"
+    >
+        <div class="content">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h3>Đăng Ký Nhận Bản Tin</h3>
+                        <p class="opacity-50">
+                            Hãy để lại email của bạn để nhận thông tin mới nhất về sản
+                            phẩm và ưu đãi hấp dẫn!
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form
+                                action="forms/newsletter.php"
+                                class="form-subscribe php-email-form"
+                        >
+                            <div class="form-group d-flex align-items-stretch">
+                                <input
+                                        type="email"
+                                        name="email"
+                                        class="form-control h-100"
+                                        placeholder="Nhập email của bạn"
+                                />
+                                <input
+                                        type="submit"
+                                        class="btn btn-secondary px-4"
+                                        value="Đăng Ký"
+                                />
+                            </div>
+                            <div class="loading">Đang gửi...</div>
+                            <div class="error-message">
+                                Có lỗi xảy ra, vui lòng thử lại!
+                            </div>
+                            <div class="sent-message">
+                                Yêu cầu đăng ký của bạn đã được gửi. Cảm ơn bạn!
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Phần Kêu Gọi Hành Động -->
+</main>
+</body>
+</html>

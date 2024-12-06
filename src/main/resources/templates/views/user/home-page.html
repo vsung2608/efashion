@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{views/user/layout-user.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main class="main" layout:fragment="content">
+
+    <!-- Phần Hero -->
+    <section id="hero" class="hero section dark-background">
+
+        <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+            <div class="carousel-item active">
+                <img th:src="@{/user/img/index1.png}" alt="Sản phẩm thời trang mới nhất">
+                <div class="carousel-container">
+                    <h2>Phong cách thời trang đẳng cấp</h2>
+                    <p>Khám phá những mẫu thiết kế hiện đại, phù hợp với mọi phong cách và cá tính của bạn.</p>
+                </div>
+            </div><!-- Kết Thúc Mục Carousel -->
+
+            <div class="carousel-item">
+                <img th:src="@{/user/img/index2.png}" alt="Xu hướng thời trang 2024">
+                <div class="carousel-container">
+                    <h2>Xu hướng thời trang 2024</h2>
+                    <p>Đừng bỏ lỡ những mẫu trang phục hot nhất đang làm mưa làm gió trên thị trường thời trang.</p>
+                </div>
+            </div><!-- Kết Thúc Mục Carousel -->
+
+            <div class="carousel-item">
+                <img th:src="@{/user/img/index3.png}" alt="Quần áo trẻ trung và năng động">
+                <div class="carousel-container">
+                    <h2>Quần áo trẻ trung và năng động</h2>
+                    <p>Phong cách dành cho giới trẻ, mang lại sự tự tin và năng lượng trong từng khoảnh khắc.</p>
+                </div>
+            </div><!-- Kết Thúc Mục Carousel -->
+
+            <div class="carousel-item">
+                <img th:src="@{/user/img/index4.png}" alt="Thời trang dành riêng cho bạn">
+                <div class="carousel-container">
+                    <h2>Thời trang dành riêng cho bạn</h2>
+                    <p>Hãy để phong cách của bạn tỏa sáng với những bộ trang phục được thiết kế tinh tế và độc đáo.</p>
+                </div>
+            </div><!-- Kết Thúc Mục Carousel -->
+
+            <div class="carousel-item">
+                <img th:src="@{/user/img/index5.png}" alt="Thời trang cho mọi người">
+                <div class="carousel-container">
+                    <h2>Thời trang cho mọi người</h2>
+                    <p>Chúng tôi mang đến sản phẩm phù hợp với mọi lứa tuổi, giới tính và phong cách sống.</p>
+                </div>
+            </div><!-- Kết Thúc Mục Carousel -->
+
+            <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a>
+
+            <ol class="carousel-indicators"></ol>
+
+        </div>
+
+    </section><!-- Kết Thúc Phần Hero -->
+
+
+    <!-- Phần Dịch Vụ -->
+    <section id="services" class="services section">
+
+        <!-- Tiêu Đề Phần -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>DỊCH VỤ</h2>
+            <p>Cung cấp các sản phẩm chất lượng và dịch vụ tận tâm</p>
+        </div><!-- Kết Thúc Tiêu Đề Phần -->
+
+        <div class="content">
+            <div class="container">
+                <div class="row g-0">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <span class="number">01</span>
+                            <div class="service-item-icon">
+                                <!-- Icon SVG -->
+                            </div>
+                            <div class="service-item-content">
+                                <h3 class="service-heading">Tư Vấn Phong Cách</h3>
+                                <p>
+                                    Giúp bạn chọn trang phục phù hợp với phong cách và cá tính của mình.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <span class="number">02</span>
+                            <div class="service-item-icon">
+                                <!-- Icon SVG -->
+                            </div>
+                            <div class="service-item-content">
+                                <h3 class="service-heading">Giao Hàng Nhanh</h3>
+                                <p>
+                                    Đảm bảo giao hàng nhanh chóng, đúng hẹn với chất lượng tốt nhất.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <span class="number">03</span>
+                            <div class="service-item-icon">
+                                <!-- Icon SVG -->
+                            </div>
+                            <div class="service-item-content">
+                                <h3 class="service-heading">Đổi Mới Phong Cách</h3>
+                                <p>
+                                    Giúp bạn cập nhật phong cách thời trang mới nhất, phù hợp với xu hướng hiện đại.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <span class="number">04</span>
+                            <div class="service-item-icon">
+                                <!-- Icon SVG -->
+                            </div>
+                            <div class="service-item-content">
+                                <h3 class="service-heading">Tư Vấn Chuyên Sâu</h3>
+                                <p>
+                                    Đội ngũ chuyên gia thời trang sẽ giúp bạn tìm ra phong cách phù hợp nhất với cá tính.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <span class="number">05</span>
+                            <!-- Icon SVG -->
+                            <div class="service-item-content">
+                                <h3 class="service-heading">Giao Hàng Tận Nơi</h3>
+                                <p>
+                                    Dịch vụ giao hàng nhanh chóng, đảm bảo sản phẩm đến tay bạn trong thời gian sớm nhất.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <span class="number">06</span>
+                            <div class="service-item-icon">
+                                <!-- Icon SVG -->
+                            </div>
+                            <div class="service-item-content">
+                                <h3 class="service-heading">Đổi Trả Dễ Dàng</h3>
+                                <p>
+                                    Chính sách đổi trả sản phẩm đơn giản, giúp bạn yên tâm mua sắm.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <span class="number">07</span>
+                            <div class="service-item-icon">
+                                <!-- Icon SVG -->
+                            </div>
+                            <div class="service-item-content">
+                                <h3 class="service-heading">Hỗ Trợ Khách Hàng</h3>
+                                <p>
+                                    Đội ngũ hỗ trợ luôn sẵn sàng giải đáp mọi thắc mắc của bạn 24/7.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <span class="number">08</span>
+                            <!-- Icon SVG -->
+                            <div class="service-item-content">
+                                <h3 class="service-heading">Khuyến Mãi Hấp Dẫn</h3>
+                                <p>
+                                    Thường xuyên có chương trình giảm giá và ưu đãi dành cho khách hàng thân thiết.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <span class="number">06</span>
+                            <div class="service-item-icon">
+                                <!-- svg -->
+                            </div>
+                            <div class="service-item-content">
+                                <h3 class="service-heading">Sản Phẩm Chất Lượng</h3>
+                                <p>
+                                    Cung cấp các sản phẩm cao cấp, đảm bảo chất lượng và an toàn cho người tiêu dùng.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <span class="number">07</span>
+                            <div class="service-item-icon">
+                                <!-- Icon SVG -->
+                            </div>
+                            <div class="service-item-content">
+                                <h3 class="service-heading">Hỗ Trợ Tư Vấn</h3>
+                                <p>
+                                    Đội ngũ nhân viên nhiệt tình luôn sẵn sàng tư vấn và hỗ trợ khách hàng.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <span class="number">08</span>
+                            <div class="service-item-icon">
+                                <!-- Icon SVG -->
+                            </div>
+                            <div class="service-item-content">
+                                <h3 class="service-heading">Mua Sắm Dễ Dàng</h3>
+                                <p>
+                                    Hệ thống đặt hàng trực tuyến thân thiện, dễ sử dụng và tiện lợi.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Services Section -->
+
+    <!-- Phần Giới Thiệu -->
+    <section id="about" class="about section">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <img th:src="@{/user/img/index6.png}" alt="Hình ảnh minh họa" class="img-fluid img-overlap" data-aos="zoom-out" />
+                    </div>
+                    <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="content-subtitle text-white opacity-50">
+                            Tại Sao Chọn Chúng Tôi
+                        </h3>
+                        <h2 class="content-title mb-4">
+                            Hơn <strong>50 năm kinh nghiệm</strong> trong ngành thời trang
+                        </h2>
+                        <p class="opacity-50">
+                            Cam kết mang đến sự hài lòng với chất lượng dịch vụ và sản phẩm tốt nhất, đáp ứng mọi nhu cầu của khách
+                            hàng.
+                        </p>
+
+                        <div class="row my-5">
+                            <div class="col-lg-12 d-flex align-items-start mb-4">
+                                <i class="bi bi-cloud-rain me-4 display-6"></i>
+                                <div>
+                                    <h4 class="m-0 h5 text-white">Chất liệu bền vững</h4>
+                                    <p class="text-white opacity-50">
+                                        Được sản xuất từ những nguyên liệu thân thiện với môi trường.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 d-flex align-items-start mb-4">
+                                <i class="bi bi-heart me-4 display-6"></i>
+                                <div>
+                                    <h4 class="m-0 h5 text-white">Phong cách thời thượng</h4>
+                                    <p class="text-white opacity-50">
+                                        Mẫu mã đa dạng, thiết kế hiện đại phù hợp với xu hướng.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 d-flex align-items-start">
+                                <i class="bi bi-shop me-4 display-6"></i>
+                                <div>
+                                    <h4 class="m-0 h5 text-white">Hỗ trợ tận tình</h4>
+                                    <p class="text-white opacity-50">
+                                        Dịch vụ chăm sóc khách hàng chuyên nghiệp, luôn sẵn sàng hỗ trợ bạn.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Phần Giới Thiệu -->
+
+
+    <!-- Phần Giới Thiệu 3 -->
+    <section id="about-3" class="about-3 section">
+        <div class="container">
+            <div class="row gy-4 justify-content-between align-items-center">
+                <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
+                    <img th:src="@{/user/img/index7.png}" alt="Hình ảnh minh họa" class="img-fluid" />
+                    <a href="https://youtu.be/rk3y4_hljMI?si=UIZxhdh0aOhdSuW2" class="glightbox pulsating-play-btn">
+                        <span class="play"><i class="bi bi-play-fill"></i></span>
+                    </a>
+                </div>
+                <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="content-title mb-4">Sản phẩm làm cuộc sống tốt đẹp hơn</h2>
+                    <p class="mb-4">
+                        Chúng tôi cam kết mang lại những sản phẩm chất lượng cao, đáp ứng nhu cầu của khách hàng và nâng tầm cuộc
+                        sống.
+                    </p>
+                    <ul class="list-unstyled list-check">
+                        <li>Thiết kế hiện đại, sang trọng</li>
+                        <li>Chất liệu thân thiện với môi trường</li>
+                        <li>Phù hợp với mọi phong cách sống</li>
+                    </ul>
+
+                    <p><a href="#" class="btn-cta">Liên hệ ngay</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Phần Giới Thiệu 3 -->
+
+    <!-- Phần Dịch Vụ 2 -->
+    <section id="services-2" class="services-2 section dark-background">
+        <!-- Tiêu Đề Phần -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Dịch Vụ</h2>
+            <p>Chúng tôi mang đến giải pháp tối ưu</p>
+        </div>
+        <!-- Kết Thúc Tiêu Đề Phần -->
+
+        <div class="services-carousel-wrap">
+            <div class="container">
+                <div class="swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+                        {
+                            "loop": true,
+                            "speed": 600,
+                            "autoplay": {
+                                "delay": 5000
+                            },
+                            "slidesPerView": "auto",
+                            "pagination": {
+                                "el": ".swiper-pagination",
+                                "type": "bullets",
+                                "clickable": true
+                            },
+                            "navigation": {
+                                "nextEl": ".js-custom-next",
+                                "prevEl": ".js-custom-prev"
+                            },
+                            "breakpoints": {
+                                "320": {
+                                    "slidesPerView": 1,
+                                    "spaceBetween": 40
+                                },
+                                "1200": {
+                                    "slidesPerView": 3,
+                                    "spaceBetween": 40
+                                }
+                            }
+                        }
+                    </script>
+                    <button class="navigation-prev js-custom-prev">
+                        <i class="bi bi-arrow-left-short"></i>
+                    </button>
+                    <button class="navigation-next js-custom-next">
+                        <i class="bi bi-arrow-right-short"></i>
+                    </button>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="service-item">
+                                <div class="service-item-contents">
+                                    <a href="#">
+                                        <span class="service-item-category">Dịch Vụ Của Chúng Tôi</span>
+                                        <h2 class="service-item-title">Thiết kế trang phục</h2>
+                                    </a>
+                                </div>
+                                <img th:src="@{/user/img/index8.png}" alt="Hình ảnh minh họa" class="img-fluid" />
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-item">
+                                <div class="service-item-contents">
+                                    <a href="#">
+                                        <span class="service-item-category">Dịch Vụ Của Chúng Tôi</span>
+                                        <h2 class="service-item-title">Tư vấn phong cách</h2>
+                                    </a>
+                                </div>
+                                <img th:src="@{/user/img/index9.png}" alt="Hình ảnh minh họa" class="img-fluid" />
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service-item">
+                                <div class="service-item-contents">
+                                    <a href="#">
+                                        <span class="service-item-category">Dịch Vụ Của Chúng Tôi</span>
+                                        <h2 class="service-item-title">Chăm sóc khách hàng</h2>
+                                    </a>
+                                </div>
+                                <img th:src="@{/user/img/index10.png}" alt="Hình ảnh minh họa" class="img-fluid" />
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="service-item">
+                                <div class="service-item-contents">
+                                    <a href="#">
+                                        <span class="service-item-category">Dịch Vụ Của Chúng Tôi</span>
+                                        <h2 class="service-item-title">Tăng Cường Chất Lượng</h2>
+                                    </a>
+                                </div>
+                                <img th:src="@{/user/img/index11.png}" alt="Hình ảnh minh họa" class="img-fluid" />
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="service-item">
+                                <div class="service-item-contents">
+                                    <a href="#">
+                                        <span class="service-item-category">Dịch Vụ Của Chúng Tôi</span>
+                                        <h2 class="service-item-title">Thu Hút Khách Hàng</h2>
+                                    </a>
+                                </div>
+                                <img th:src="@{/user/img/index12.png}" alt="Hình ảnh minh họa" class="img-fluid" />
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="service-item">
+                                <div class="service-item-contents">
+                                    <a href="#">
+                                        <span class="service-item-category">Dịch Vụ Của Chúng Tôi</span>
+                                        <h2 class="service-item-title">Quản Lý Sản Phẩm</h2>
+                                    </a>
+                                </div>
+                                <img th:src="@{/user/img/index13.png}" alt="Hình ảnh minh họa" class="img-fluid" />
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="service-item">
+                                <div class="service-item-contents">
+                                    <a href="#">
+                                        <span class="service-item-category">Dịch Vụ Của Chúng Tôi</span>
+                                        <h2 class="service-item-title">Sáng Tạo Ý Tưởng</h2>
+                                    </a>
+                                </div>
+                                <img th:src="@{/user/img/index14.png}" alt="Hình ảnh minh họa" class="img-fluid" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- /Services 2 Section -->
+
+    <!-- Phần Đánh Giá Khách Hàng -->
+    <section class="testimonials-12 testimonials section" id="testimonials">
+        <!-- Tiêu Đề Phần -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>ĐÁNH GIÁ KHÁCH HÀNG</h2>
+            <p>Ý kiến từ những khách hàng thân thiết của chúng tôi</p>
+        </div>
+        <!-- Kết Thúc Tiêu Đề Phần -->
+
+        <div class="testimonial-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4 mb-md-4">
+                        <div class="testimonial">
+                            <img th:src="@{/user//img/testimonials/testimonials-1.jpg}" alt="Khách hàng đánh giá" />
+                            <blockquote>
+                                <p>
+                                    “Dịch vụ tuyệt vời! Tôi rất hài lòng với chất lượng sản phẩm và sự tận tâm của đội ngũ nhân viên.”
+                                </p>
+                            </blockquote>
+                            <p class="client-name">Nguyễn Văn A</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 mb-md-4">
+                        <div class="testimonial">
+                            <img th:src="@{/user//img/testimonials/testimonials-2.jpg}" alt="Khách hàng đánh giá" />
+                            <blockquote>
+                                <p>
+                                    “Thiết kế hiện đại, đẹp mắt và rất hợp xu hướng. Tôi sẽ tiếp tục ủng hộ trong tương lai.”
+                                </p>
+                            </blockquote>
+                            <p class="client-name">Trần Thị B</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 mb-md-4">
+                        <div class="testimonial">
+                            <img th:src="@{/user//img/testimonials/testimonials-3.jpg}" alt="Khách hàng đánh giá" />
+                            <blockquote>
+                                <p>
+                                    “Giao hàng nhanh chóng, đóng gói cẩn thận. Sản phẩm chất lượng vượt mong đợi!”
+                                </p>
+                            </blockquote>
+                            <p class="client-name">Lê Thị C</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 mb-md-4">
+                        <div class="testimonial">
+                            <img th:src="@{/user//img/testimonials/testimonials-4.jpg}" alt="Khách hàng đánh giá" />
+                            <blockquote>
+                                <p>
+                                    “Đội ngũ hỗ trợ rất nhiệt tình và chuyên nghiệp. Tôi cảm thấy rất yên tâm khi mua sắm tại đây.”
+                                </p>
+                            </blockquote>
+                            <p class="client-name">Phạm Văn D</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Phần Đánh Giá Khách Hàng -->
+
+
+    <!-- Phần Bài Viết Mới Nhất -->
+    <section id="recent-posts" class="recent-posts section">
+        <!-- Tiêu Đề Phần -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Bài Viết Mới Nhất</h2>
+            <p>Cập nhật những tin tức và xu hướng mới</p>
+        </div>
+        <!-- Kết Thúc Tiêu Đề Phần -->
+
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-xl-4 col-md-6">
+                    <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
+                        <div class="post-img position-relative overflow-hidden">
+                            <img th:src="@{/user//img/blog/blog-1.jpg}" class="img-fluid" alt="Hình ảnh bài viết" />
+                            <span class="post-date">12 Tháng 12</span>
+                        </div>
+
+                        <div class="post-content d-flex flex-column">
+                            <h3 class="post-title">
+                                Giải pháp tối ưu cho phong cách thời trang hiện đại
+                            </h3>
+
+                            <div class="meta d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-person"></i>
+                                    <span class="ps-2">Nguyễn Thị Hồng</span>
+                                </div>
+                                <span class="px-3 text-black-50">/</span>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-folder2"></i>
+                                    <span class="ps-2">Thời Trang</span>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <a href="blog-details-test.html" class="readmore stretched-link"><span>Đọc Thêm</span><i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kết Thúc Bài Viết -->
+
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="200">
+                        <div class="post-img position-relative overflow-hidden">
+                            <img th:src="@{/user//img/blog/blog-2.jpg}" class="img-fluid" alt="Hình ảnh bài viết" />
+                            <span class="post-date">17 Tháng 7</span>
+                        </div>
+
+                        <div class="post-content d-flex flex-column">
+                            <h3 class="post-title">
+                                Bí quyết kết hợp trang phục năng động
+                            </h3>
+
+                            <div class="meta d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-person"></i>
+                                    <span class="ps-2">Trần Văn Mạnh</span>
+                                </div>
+                                <span class="px-3 text-black-50">/</span>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-folder2"></i>
+                                    <span class="ps-2">Thể Thao</span>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <a href="blog-details-test.html" class="readmore stretched-link"><span>Đọc Thêm</span><i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kết Thúc Bài Viết -->
+
+                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="post-item position-relative h-100">
+                        <div class="post-img position-relative overflow-hidden">
+                            <img th:src="@{/user//img/blog/blog-3.jpg}" class="img-fluid" alt="Hình ảnh bài viết" />
+                            <span class="post-date">05 Tháng 9</span>
+                        </div>
+
+                        <div class="post-content d-flex flex-column">
+                            <h3 class="post-title">
+                                Cách xây dựng phong cách thanh lịch tối giản
+                            </h3>
+
+                            <div class="meta d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-person"></i>
+                                    <span class="ps-2">Nguyễn Thị Mai</span>
+                                </div>
+                                <span class="px-3 text-black-50">/</span>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-folder2"></i>
+                                    <span class="ps-2">Kinh Tế</span>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <a href="blog-details-test.html" class="readmore stretched-link"><span>Đọc Thêm</span><i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kết Thúc Bài Viết -->
+
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="200">
+                        <div class="post-img position-relative overflow-hidden">
+                            <img th:src="@{/user//img/blog/blog-2.jpg}" class="img-fluid" alt="Hình ảnh bài viết" />
+                            <span class="post-date">17 Tháng 7</span>
+                        </div>
+
+                        <div class="post-content d-flex flex-column">
+                            <h3 class="post-title">
+                                Bí quyết kết hợp trang phục năng động
+                            </h3>
+
+                            <div class="meta d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-person"></i>
+                                    <span class="ps-2">Trần Văn Mạnh</span>
+                                </div>
+                                <span class="px-3 text-black-50">/</span>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-folder2"></i>
+                                    <span class="ps-2">Thể Thao</span>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <a href="blog-details.html" class="readmore stretched-link"><span>Đọc Thêm</span><i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kết Thúc Bài Viết -->
+
+                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="post-item position-relative h-100">
+                        <div class="post-img position-relative overflow-hidden">
+                            <img th:src="@{/user//img/blog/blog-3.jpg}" class="img-fluid" alt="Hình ảnh bài viết" />
+                            <span class="post-date">05 Tháng 9</span>
+                        </div>
+
+                        <div class="post-content d-flex flex-column">
+                            <h3 class="post-title">
+                                Cách xây dựng phong cách thanh lịch tối giản
+                            </h3>
+
+                            <div class="meta d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-person"></i>
+                                    <span class="ps-2">Nguyễn Thị Mai</span>
+                                </div>
+                                <span class="px-3 text-black-50">/</span>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-folder2"></i>
+                                    <span class="ps-2">Kinh Tế</span>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <a href="blog-details.html" class="readmore stretched-link"><span>Đọc Thêm</span><i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kết Thúc Bài Viết -->
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

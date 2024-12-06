@@ -1,0 +1,68 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 260804
+    url: "jdbc:mysql://localhost:3306/efashionDB"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    database: mysql
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    cache: false
+  mail:
+    host: localhost
+    port: 1025
+    username: finn
+    password: finn
+    properties:
+      mail:
+        trust: "*"
+      auth: true
+      starttls:
+        enabled: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+        security:
+          oauth2:
+            resourceserver:
+              jwt:
+                issuer-uri: "http://localhost:9090/realms/e-fashion"
+      application:
+        file:
+          uploads:
+            photos-output-path: ./uploads
+      server:
+        port: 8080
+
+application:
+  security:
+    jwt:
+      expiration: 8640000
+      secret-key: 6Y6qhCYXM4iyyU8vDC2ioZ5MpQaOgYERPN3KSFkNYXuKnXnu19faztG9RRGQzwP2
+
+  emailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+
+#server:
+#  port: 8443
+#  ssl:
+#    key-store: classpath:mykeystore.jks
+#    key-store-password: vsung2608
+#    key-store-type: JKS
+#    key-alias: myalias
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
