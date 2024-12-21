@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-@Controller
+@Controller("adminProfileController")
 @RequiredArgsConstructor
 @RequestMapping("/admin")
 public class ProfileController {

@@ -46,6 +46,7 @@ public class SecurityConfig {
                             "/webjars/**",
                             "/swagger-ui.html"
                     ).permitAll()
+                    .requestMatchers("/web/**").hasAnyRole("USER", "ADMIN", "ANONYMOUS")
                     .requestMatchers("/admin/**").hasAnyRole("ADMIN", "SUPPER-ADMIN")
 //                    .requestMatchers("/user/**").hasAnyRole("USER")
                     .anyRequest().authenticated();

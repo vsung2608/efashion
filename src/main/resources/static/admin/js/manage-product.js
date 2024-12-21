@@ -29,6 +29,7 @@ $(function() {
             type: 'GET',
             dataType: 'json',
             success: function (response) {
+                $('#productId').val(response.data.productId)
                 $('#name').val(response.data.name)
                 $('#discount').val(response.data.discount)
                 $('#price').val(response.data.price)
@@ -53,21 +54,23 @@ $(function() {
         var formData = $('#form-product').serializeArray()
         var type
         formData.forEach(item => data[item.name] = item.value)
-        if($('#productId') != null){
+        var productId = $('#productId').val()  // Lấy giá trị của data-id
+        console.log(productId)
+        if(productId != null){
             type = 'PUT'
         }else{
             type = 'POST'
         }
         Swal.fire({
-            title: "Do you want to save the changes?",
+            title: "Bạn có chắc muốn lưu thông tin này không?",
             showDenyButton: true,
             showCancelButton: true,
-            confirmButtonText: "Save",
-            denyButtonText: `Don't save`
+            confirmButtonText: "Lưu",
+            denyButtonText: `Hủy`
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: 'efashion/admin/products',
+                    url: '/efashion/admin/products',
                     type: type,
                     contentType: 'application/json',
                     data: JSON.stringify(data),
@@ -86,7 +89,6 @@ $(function() {
                 $('#myForm').hide()
             }
         });
-
     })
 
     $('.deleteBtn').click(function () {
@@ -104,7 +106,7 @@ $(function() {
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: "products/" + productId,
+                    url: "/efashion/admin/products/" + productId,
                     type: 'DELETE',
                     dataType: 'json',
                     success: function (response) {

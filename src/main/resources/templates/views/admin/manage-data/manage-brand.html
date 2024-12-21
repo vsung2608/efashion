@@ -58,7 +58,8 @@
                                     <input type="search" name="keyword" id="search">
                                 </div>
                             </div>
-                            <table>
+                            <table class="display">
+                                <thead>
                                 <tr>
                                     <th></th>
                                     <th>Ảnh</th>
@@ -70,6 +71,8 @@
                                     <th>Trạng thái</th>
                                     <th>Thiết lập</th>
                                 </tr>
+                                </thead>
+                                <tbody>
                                 <tr th:each="item: ${brands}" th:id="'brand_' + ${item.brandId}"
                                     th:data-id="${item.brandId}">
                                     <td><input type="radio"></td>
@@ -95,6 +98,7 @@
                                         </ul>
                                     </td>
                                 </tr>
+                                </tbody>
                             </table>
                         </form>
                         <div class="paging">

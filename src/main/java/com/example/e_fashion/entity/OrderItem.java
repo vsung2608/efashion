@@ -18,7 +18,7 @@ public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String orderItemId;
+    private String itemId;
 
     @ManyToOne
     @JoinColumn(name = "order_id")

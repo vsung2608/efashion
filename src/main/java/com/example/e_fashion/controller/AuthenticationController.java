@@ -53,7 +53,7 @@ public class AuthenticationController {
         if(authResponse.getAuthorities().stream().anyMatch("ROLE_ADMIN"::equals)){
             url_redirect = "/efashion/admin/dashboard";
         }else if(authResponse.getAuthorities().stream().anyMatch("ROLE_USER"::equals)){
-            url_redirect = "/efashion/general/home-page";
+            url_redirect = "/efashion/web/home-page";
         }
         return ApiResponse.<LoginResponse>builder()
                 .code(200)
@@ -85,6 +85,6 @@ public class AuthenticationController {
         response.addCookie(cookie);
 
         SecurityContextHolder.clearContext();
-        return "redirect:/general/home-page";
+        return "redirect:/web/home-page";
     }
 }

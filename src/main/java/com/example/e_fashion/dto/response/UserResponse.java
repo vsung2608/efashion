@@ -27,6 +27,8 @@ public class UserResponse {
 
     private String address;
 
+    private String deliveryAddress;
+
     private String city;
 
     private String state;

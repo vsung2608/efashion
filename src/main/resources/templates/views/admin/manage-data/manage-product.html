@@ -58,7 +58,8 @@
                                     <input type="search" name="keyword" id="search">
                                 </div>
                             </div>
-                            <table>
+                            <table class="display">
+                                <thead>
                                 <tr>
                                     <th></th>
                                     <th>Ảnh</th>
@@ -70,6 +71,8 @@
                                     <th>Khuyến mãi</th>
                                     <th>Thiết lập</th>
                                 </tr>
+                                </thead>
+                                <tbody>
                                 <tr th:each="item: ${products}" th:id="'product_' + ${item.productId}"
                                     th:data-id="${item.productId}">
                                     <td><input type="radio"></td>
@@ -95,6 +98,7 @@
                                         </ul>
                                     </td>
                                 </tr>
+                                </tbody>
                             </table>
                         </form>
                         <div class="paging">
@@ -114,7 +118,7 @@
         </div>
 
         <form id="form-product">
-            <input type="hidden" name="productId">
+            <input type="hidden" name="productId" id="productId">
             <div class="row">
                 <div class="col-xl-8">
                     <div class="row">

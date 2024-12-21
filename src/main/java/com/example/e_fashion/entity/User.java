@@ -1,5 +1,6 @@
 package com.example.e_fashion.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -41,6 +42,8 @@ public class User implements UserDetails, Principal {
 
     private String address;
 
+    private String deliveryAddress;
+
     private String city;
 
     private String state;
@@ -64,6 +67,7 @@ public class User implements UserDetails, Principal {
     private LocalDate lastModifiedDate;
 
     @ManyToMany(fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<Role> roles;
 
 

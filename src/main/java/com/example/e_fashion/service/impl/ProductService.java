@@ -24,18 +24,11 @@ public class ProductService implements IProductService {
     private final BrandRepository brandRepository;
 
     private final ProductMapper productMapper;
-    private final CategoryMapper categoryMapper;
-    private final BrandMapper brandMapper;
 
     @Override
     public List<ProductResponse> getAllProducts() {
         return productRepository.findAllByDeletedFalse().stream()
-                .map(p -> {
-                    var product = productMapper.toProductResponse(p);
-                    product.setCategory(categoryMapper.toCategoryResponse(p.getCategory()));
-                    product.setBrand(brandMapper.toBrandResponse(p.getBrand()));
-                    return product;
-                })
+                .map(productMapper::toProductResponse)
                 .toList();
     }
 
@@ -43,10 +36,7 @@ public class ProductService implements IProductService {
         var product = productRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
 
-        var res = productMapper.toProductResponse(product);
-        res.setBrand(brandMapper.toBrandResponse(product.getBrand()));
-        res.setCategory(categoryMapper.toCategoryResponse(product.getCategory()));
-        return res;
+        return productMapper.toProductResponse(product);
     }
 
     @Override
@@ -69,5 +59,19 @@ public class ProductService implements IProductService {
                 .orElseThrow(() -> new RuntimeException("Product not found"));
         product.setDeleted(true);
         productRepository.save(product);
+    }
+
+    @Override
+    public List<ProductResponse> getAllByKeyword(String keyword) {
+        return productRepository.findAllByName(keyword).stream()
+                .map(productMapper::toProductResponse)
+                .toList();
+    }
+
+    @Override
+    public List<ProductResponse> getProductByBrandId(String brandId) {
+        return productRepository.findByBrandBrandId(brandId).stream()
+                .map(productMapper::toProductResponse)
+                .toList();
     }
 }

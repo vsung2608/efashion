@@ -26,4 +26,5 @@ public class ProductResponse {
     private int discount;
     private boolean deleted;
     private LocalDateTime createdAt;
+    private BigDecimal promotionalPrice;
 }

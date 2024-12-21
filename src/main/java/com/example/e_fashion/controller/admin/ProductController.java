@@ -34,6 +34,7 @@ public class ProductController {
 
         List<BrandResponse> brands = brandService.getAllBrands();
         model.addAttribute("brands", brands);
+
         return "views/admin/manage-data/manage-product";
     }
 

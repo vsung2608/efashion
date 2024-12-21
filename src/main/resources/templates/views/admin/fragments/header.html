@@ -31,8 +31,8 @@
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                     <li class="dropdown-header">
-                        You have 4 new notifications
-                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        Bạn có 4 thông báo mới
+                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Xem tất</span></a>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
@@ -43,7 +43,7 @@
                         <div>
                             <h4>Lorem Ipsum</h4>
                             <p>Quae dolorem earum veritatis oditseno</p>
-                            <p>30 min. ago</p>
+                            <p>30 phút trước</p>
                         </div>
                     </li>
 
@@ -56,7 +56,7 @@
                         <div>
                             <h4>Atque rerum nesciunt</h4>
                             <p>Quae dolorem earum veritatis oditseno</p>
-                            <p>1 hr. ago</p>
+                            <p>1 giờ trước</p>
                         </div>
                     </li>
 
@@ -69,7 +69,7 @@
                         <div>
                             <h4>Sit rerum fuga</h4>
                             <p>Quae dolorem earum veritatis oditseno</p>
-                            <p>2 hrs. ago</p>
+                            <p>2 giờ trước</p>
                         </div>
                     </li>
 
@@ -82,7 +82,7 @@
                         <div>
                             <h4>Dicta reprehenderit</h4>
                             <p>Quae dolorem earum veritatis oditseno</p>
-                            <p>4 hrs. ago</p>
+                            <p>4 giờ trước</p>
                         </div>
                     </li>
 
@@ -90,7 +90,7 @@
                         <hr class="dropdown-divider">
                     </li>
                     <li class="dropdown-footer">
-                        <a href="#">Show all notifications</a>
+                        <a href="#">Xem tất cả thông báo</a>
                     </li>
 
                 </ul><!-- End Notification Dropdown Items -->
@@ -106,7 +106,7 @@
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                     <li class="dropdown-header">
-                        You have 3 new messages
+                        Bạn có 3 tin nhắn mới
                         <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                     </li>
                     <li>
@@ -115,7 +115,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img th:src="@{/admin/assets/img/messages-1.jpg}"
+                            <img th:src="@{/admin/img/messages-1.jpg}"
                                  alt="" class="rounded-circle">
                             <div>
                                 <h4>Maria Hudson</h4>
@@ -130,7 +130,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img th:src="@{/admin/assets/img/messages-2.jpg}"
+                            <img th:src="@{/admin/img/messages-2.jpg}"
                                  alt="" class="rounded-circle">
                             <div>
                                 <h4>Anna Nelson</h4>
@@ -145,7 +145,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img th:src="@{/admin/assets/img/messages-3.jpg}"
+                            <img th:src="@{/admin/img/messages-3.jpg}"
                                  alt="" class="rounded-circle">
                             <div>
                                 <h4>David Muldon</h4>
@@ -169,14 +169,14 @@
             <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img th:src="@{/admin/assets/img/profile-img.jpg}"
+                    <img th:src="@{/admin/img/profile-img.jpg}"
                          alt="Profile" class="rounded-circle">
-                    <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                    <span class="d-none d-md-block dropdown-toggle ps-2">Ng. Sung</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
-                        <h6>Kevin Anderson</h6>
+                        <h6>Nguyễn Văn Sung</h6>
                         <span>Web Designer</span>
                     </li>
                     <li>
@@ -203,16 +203,16 @@
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
                             <i class="bi bi-question-circle"></i>
-                            <span>Need Help?</span>
+                            <span>Trợ giúp?</span>
                         </a>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center" th:href="@{/auth/logout}">
                             <i class="bi bi-box-arrow-right"></i>
-                            <span>Sign Out</span>
+                            <span>Đăng xuất</span>
                         </a>
                     </li>
                 </ul>

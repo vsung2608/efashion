@@ -19,4 +19,8 @@ public interface IAuthenticateService {
     String generateAndSaveEmailToken(User user);
 
     String generateActivationCode(int length);
+
+    String findIdByEmail(String email);
+
+    User findByEmail(String email);
 }

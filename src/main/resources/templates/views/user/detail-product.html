@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{views/user/layout-user.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/user/css/products.css}">
+</head>
+<body>
+<main layout:fragment="content">
+    <section>
+        <div class="container my-5">
+            <div class="row">
+                <!-- Image Section -->
+                <div class="col-md-4 text-center">
+                    <img
+                            th:src="@{'/uploads/' + ${product.imageUrl}}"
+                            alt="Product"
+                            class="img-fluid border rounded"
+                            style="object-fit: cover"
+                    />
+                    <div class="mt-2">
+                        <span class="badge bg-success" style="position: absolute; top: 20px">EFashion shop</span>
+                    </div>
+                </div>
+                <input type="hidden" id="productId" th:value="${product.productId}">
+
+                <!-- Product Info Section -->
+                <div class="col-md-8">
+                    <h5 class="text-danger">TOP DEAL</h5>
+                    <h3 class="fw-bold" th:text="${product.name}">
+
+                    </h3>
+                    <h6>Thương hiệu: <span class="text-primary" th:text="${product.brand.name}"></span></h6>
+                    <h6>Thể loại: <span class="text-primary" th:text="${product.category.name}"></span></h6>
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge bg-warning text-dark">5.0</span>
+                        <span class="ms-2">(2 đánh giá)</span>
+                        <span class="ms-3">Đã bán: 13</span>
+                    </div>
+                    <h4 class="text-danger" id="price"></h4>
+                    <input type="hidden" id="price-i">
+                    <hr/>
+                    <div class="mb-3">
+                        <p><strong>Thông tin vận chuyển:</strong></p>
+                        <ul>
+                            <li>Giao đến Q. Hoàn Kiếm, P. Hàng Trống, Hà Nội</li>
+                            <li>Dự kiến giao: Thứ Năm, 12/12</li>
+                            <li>Phí vận chuyển: 37.700₫</li>
+                            <li class="text-success">
+                                Freeship 10k đơn từ 45k, Freeship 25k đơn từ 100k
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <label for="quantity" class="me-2">Số lượng:</label>
+                        <input
+                                type="number"
+                                id="quantity"
+                                class="form-control w-25"
+                                value="1"
+                                min="1"
+                        />
+                    </div>
+                    <div class="d-flex">
+                        <button class="btn btn-danger me-3">Mua ngay</button>
+                        <button class="btn btn-primary me-3" id="add">Thêm vào giỏ</button>
+                        <button class="btn btn-outline-secondary">Mua trước trả sau</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <h4 class="mb-4">Sản phẩm tương tự</h4>
+            <div class="row">
+                <div class="col-md-2 col-sm-4 mb-3 pro-d" th:each="item : ${products}"
+                     th:id="'product_' + ${item.productId}"
+                     th:data-id="${item.productId}">
+                    <div class="product-grid">
+                        <div class="product-image">
+                            <a href="#" class="image">
+                                <img th:src="@{'/uploads/' + ${item.imageUrl}}" class="img-fluid zoom">
+                            </a>
+                            <span th:if="${item.discount != 0}" class="product-discount-label"
+                                  th:text="${item.discount + '%'}"></span>
+                            <ul class="product-links">
+                                <li><a href="" class="add-in-cart"><i class="fa-solid fa-cart-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-random"></i></a></li>
+                            </ul>
+                            <a th:href="@{'/web/products/detail/' + ${item.productId}}" class="add-to-cart">Xem chi
+                                tiết</a>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#" th:text="${item.name}"></a></h3>
+                            <div class="price" th:text="${item.price} + ' ₫'"></div>
+                            <div class="text-warning">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var id = $('#productId').val()
+            let updatedQuantity
+            $('#quantity').on('input change', function() {
+                updatedQuantity = $(this).val();
+            });
+
+            $('#add').click(function () {
+                Swal.fire({
+                    title: "Bạn có chắc là muốn thêm sản phẩm này vòa giỏ không?",
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: "Thêm",
+                    denyButtonText: `Hủy`
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '/efashion/web/carts/add-item?id=' + id + '&quantity=' + updatedQuantity,
+                            type: 'POST',
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            success: function (response) {
+                                Swal.fire("Đã thêm!", "", response.message);
+                            },
+                            error: function (xhr) {
+                            }
+                        })
+                    } else if (result.isDenied) {
+                        Swal.fire("Đã hủy", "", "info");
+                    }
+                });
+            })
+        })
+    </script>
+</main>
+</body>
+</html>

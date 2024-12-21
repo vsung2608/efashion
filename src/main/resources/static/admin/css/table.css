@@ -43,6 +43,7 @@ table{
 table th, td{
     padding: 10px;
     border: 1px solid rgb(213, 212, 212);
+    white-space: nowrap;
 }
 
 th{
@@ -159,13 +160,13 @@ body {
 #myForm {
     display: none;
     position: fixed;
-    top: 20%;
+    top: 15%;
     /* Canh giữa dọc */
-    right: 10%;
+    right: 15%;
     /* Canh giữa ngang */
-    width: 60%;
+    width: 70%;
     /* Chiếm 80% chiều rộng màn hình */
-    height: 60%;
+    height: 70%;
     /* Chiếm 80% chiều cao màn hình */
     background: #fff;
     border-radius: 10px;

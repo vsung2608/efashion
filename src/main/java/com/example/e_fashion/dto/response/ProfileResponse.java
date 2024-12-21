@@ -26,6 +26,8 @@ public class ProfileResponse {
 
     private String address;
 
+    private String deliveryAddress;
+
     private String city;
 
     private String state;

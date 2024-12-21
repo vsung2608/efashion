@@ -19,6 +19,7 @@ $(function() {
         $('#myForm').hide();
     });
 
+
     $('.editBtn').click(function(e) {
         e.preventDefault()
         var row = $(this).closest('tr');

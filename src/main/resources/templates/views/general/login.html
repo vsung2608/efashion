@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Đăng ký</title>
+    <title>Đăng nhập</title>
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -91,21 +91,24 @@
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    if(response.data.url) window.location.href = response.data.url
+                    setTimeout(() => {
+                        if(response.data.url) window.location.href = response.data.url
+                    }, 1500);
+
                 },
-                error: function(xhr) {
-                    const errorResponse = xhr.responseJSON;
-                    if (errorResponse && errorResponse.message) {
+                error: function(jqXHR, textStatus, errorThrown) {
+                    // if (jqXHR.responseJSON) {
                         Swal.fire({
                             position: "top-end",
                             icon: "error",
-                            title: errorResponse.message,
+                            title: jqXHR.responseJSON.message,
                             showConfirmButton: false,
                             timer: 1500
                         });
-                    } else {
-                        console.error("Lỗi không xác định.");
-                    }
+                    // } else {
+                    //     console.error("Lỗi không xác định:", textStatus, errorThrown);
+                    //     alert("Đã xảy ra lỗi không xác định!");
+                    // }
                 }
             });
         })

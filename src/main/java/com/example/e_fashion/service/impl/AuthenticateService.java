@@ -23,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -52,7 +53,7 @@ public class AuthenticateService implements IAuthenticateService {
     public UserResponse register(RegistrationRequest request) throws MessagingException {
         User user = userMapper.toUser(request);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        Role role = roleRepository.findByName("ADMIN")
+        Role role = roleRepository.findByName("USER")
                 .orElseThrow(() -> new RuntimeException("Role not found"));
         user.setRoles(new ArrayList<>(Collections.singleton(role)));
 
@@ -66,11 +67,16 @@ public class AuthenticateService implements IAuthenticateService {
     }
 
     public AuthenticationResponse authenticate(LoginRequest request){
-        var auth = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
-                        request.getPassword())
-        );
+        Authentication auth;
+        try {
+             auth = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            request.getEmail(),
+                            request.getPassword())
+            );
+        }catch (Exception e){
+            throw new ResponseException(BusinessError.INVALID_EMAIL_PASSWORD);
+        }
 
         var user = (User) auth.getPrincipal();
         HashMap<String, Object> claims = new HashMap<>();
@@ -120,7 +126,7 @@ public class AuthenticateService implements IAuthenticateService {
         var activationCode = generateActivationCode(6);
 
         var emailToken = EmailToken.builder()
-                .token("123456")
+                .token(activationCode)
                 .createdAt(LocalDateTime.from(LocalDateTime.now()))
                 .expiresAt(LocalDateTime.from(LocalDateTime.now().plusMinutes(15)))
                 .user(user)
@@ -139,5 +145,16 @@ public class AuthenticateService implements IAuthenticateService {
             code.append(characters.charAt(charAt));
         }
         return code.toString();
+    }
+
+    public String findIdByEmail(String email){
+        return userRepository.findIdByEmail(email);
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        var user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        return user;
     }
 }

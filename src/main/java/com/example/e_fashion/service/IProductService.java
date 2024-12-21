@@ -14,4 +14,8 @@ public interface IProductService {
     void saveProduct(ProductRequest request);
 
     void deleteProduct(String id);
+
+    List<ProductResponse> getAllByKeyword(String keyword);
+
+    List<ProductResponse> getProductByBrandId(String brandId);
 }

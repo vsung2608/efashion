@@ -53,16 +53,21 @@ application:
     frontend:
       activation-url: http://localhost:4200/activate-account
 
-#server:
-#  port: 8443
-#  ssl:
-#    key-store: classpath:mykeystore.jks
-#    key-store-password: vsung2608
-#    key-store-type: JKS
-#    key-alias: myalias
+server:
+  port: 8443
+  ssl:
+    key-store: classpath:mykeystore.jks
+    key-store-password: vsung2608
+    key-store-type: JKS
+    key-alias: myalias
 
 logging:
   level:
     org:
       springframework:
         security: DEBUG
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql: TRACE

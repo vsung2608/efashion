@@ -1,54 +1,49 @@
 package com.example.e_fashion.controller.user;
 
-import com.example.e_fashion.entity.User;
-import org.springframework.security.core.context.SecurityContextHolder;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/general")
+@RequestMapping("/web")
+@RequiredArgsConstructor
 public class HomeController {
 
-    @GetMapping("/login")
-    public String login() {
-        return "views/general/login";
-    }
-
-    @GetMapping("/register")
-    public String register(){
-        return "views/general/register";
-    }
-
-    @GetMapping("/confirmation")
-    public String confirmation(){
-        return "views/general/confirmation";
-    }
-
     @GetMapping("/home-page")
-    public String homepage(Model model){
-        var authenticated = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(authenticated instanceof User) model.addAttribute("authenticated", true);
-        else model.addAttribute("authenticated", false);
-
-        System.out.println(SecurityContextHolder.getContext().getAuthentication().getDetails());
-
+    public String homepage(Authentication authentication, Model model){
+        if(authentication == null)model.addAttribute("logined", false);
+        else model.addAttribute("logined", true);
         return "views/user/home-page";
     }
 
     @GetMapping("/introduction")
-    public String about(){
+    public String about(Authentication authentication, Model model){
+        if(authentication == null)model.addAttribute("logined", false);
+        else model.addAttribute("logined", true);
         return "views/user/introduction";
     }
 
     @GetMapping("/blogs")
-    public String blogs(){
+    public String blogs(Authentication authentication, Model model){
+        if(authentication == null)model.addAttribute("logined", false);
+        else model.addAttribute("logined", true);
         return "views/user/blogs";
     }
 
     @GetMapping("/contact")
-    public String contact(){
+    public String contact(Authentication authentication, Model model){
+        if(authentication == null)model.addAttribute("logined", false);
+        else model.addAttribute("logined", true);
         return "views/user/contacts";
+    }
+
+    @GetMapping("/blogs/detail")
+    public String blogsDetail(Authentication authentication, Model model){
+        if(authentication == null)model.addAttribute("logined", false);
+        else model.addAttribute("logined", true);
+        return "views/user/blog-details";
     }
 }

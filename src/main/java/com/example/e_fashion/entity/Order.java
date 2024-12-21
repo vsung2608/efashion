@@ -5,8 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "orders")
+@EntityListeners(AuditingEntityListener.class)
 public class Order {
 
     @Id
@@ -26,11 +28,12 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name = "order_date")
+    @CreatedDate
+    @Column(name = "order_date", nullable = false, updatable = false)
     private LocalDateTime orderDate;
 
     @Column(nullable = false)
-    private BigDecimal totalAmount;
+    private int totalAmount;
 
     @Column(name = "shipping_address")
     private String shippingAddress;
@@ -38,11 +41,10 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 
-    @OneToOne(mappedBy = "order")
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
     private Payment payment;
-
 }
 
